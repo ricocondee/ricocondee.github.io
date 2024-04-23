@@ -1,0 +1,135 @@
+{
+  "slides": [
+    {
+      "Project": "Magdal Store",
+      "src": "src/assets/demo1.webp",
+      "stack": "React, HTML and CSS",
+      "description": "A simple online store with a cart.",
+      "link": "https://site.magdal.live/",
+      "github": "https://github.com/ricocondee/Magdal"
+    },
+    {
+      "Project": "Magdal API",
+      "src": "src/assets/demo4.webp",
+      "stack": "Node, Express and Sqlite3",
+      "description": "An API for an online store.",
+      "link": "https://magdal.live/api/products/",
+      "github": "https://github.com/ricocondee/store-api"
+    },
+    {
+      "Project": "LoginFront",
+      "src": "src/assets/demo3.webp",
+      "stack": "HTML and CSS",
+      "description": "A simple login page.",
+      "link": "https://ricocondee.github.io/loginFront/",
+      "github": "https://github.com/ricocondee/loginFront"
+    },
+    {
+      "Project": "Favorite Marvel Heroes",
+      "src": "src/assets/demo2.webp",
+      "stack": "HTML and CSS",
+      "description": "A simple page with my favorite Marvel heroes.",
+      "link": "favoritesmarvel.netlify.app",
+      "github": "https://github.com/ricocondee/yourSuperHero"
+    },
+    {
+      "Project": "My Recipe Blog",
+      "src": "src/assets/demo5.webp",
+      "stack": "HTML and CSS",
+      "description": " A simple blog with a cake recipe",
+      "link": "https://ricocondee.github.io/recipe-blog/",
+      "github": "https://github.com/ricocondee/recipe-blog"
+    },
+    {
+      "Project": "Interior Consultant",
+      "src": "src/assets/demo6.webp",
+      "stack": "HTML and CSS",
+      "description": "A simple interior consultant page",
+      "link": "https://ricocondee.github.io/interiorConsultant/",
+      "github": "https://github.com/ricocondee/interiorConsultant"
+    },
+    {
+      "Project": "The Messy Crew",
+      "src": "src/assets/demo7.webp",
+      "stack": "HTML and CSS",
+      "description": "A page whit a crew of messy people",
+      "link": "https://ricocondee.github.io/myTeamPage",
+      "github": "https://github.com/ricocondee/myTeamPage"
+    },
+    {
+      "Project": "404 Not Found",
+      "src": "src/assets/demo8.webp",
+      "stack": "HTML and CSS",
+      "description": "A page for 404 not found",
+      "link": "https://ricocondee.github.io/404-page-challenge",
+      "github": "https://github.com/ricocondee/404-page-challenge"
+    }
+  ],
+
+  "certificates": [
+    {
+      "logo": "../src/assets/efset.webp",
+      "title": "EF SET English Certificate 72/100 (C2 Proficient)",
+      "company": "EF Standard English Test (EF SET)",
+      "date": "jan. 2023",
+      "credential": "(Reading and listening test)",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/platzi.webp",
+      "title": "Base de Datos con MongoDB y WebSockets",
+      "company": "Platzi",
+      "date": "mar. 2022",
+      "credential": "79a8b24b-2723-45a6-8d86-ba5331 Ob5260",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/movistar.webp",
+      "title": "CO Programación con JavaScript",
+      "company": "Fundación Telefónica Movistar",
+      "date": "nov. 2021",
+      "credential": "69ae8ee1-7b60-4dda-b9ee-bb61164c93ca",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/platzi.webp",
+      "title": "Curso Practico de React.js",
+      "company": "Platzi",
+      "date": "oct. 2021",
+      "credential": "8d625c97-80d1-4f96-8f6f-5ec4564b8925",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/platzi.webp",
+      "title": "Curso Practico de JavaScript",
+      "company": "Platzi",
+      "date": "oct. 2021",
+      "credential": "ed288e9a-f7fd-482e-916e-2e0113ccd62d",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/platzi.webp",
+      "title": "[Appsco] Fundamentos de Ingeniería de Software",
+      "company": "Platzi",
+      "date": "sept. 2021",
+      "credential": "5bdbd557-3a51-4c97-86fd-1f313f9f2613",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/platzi.webp",
+      "title": "Curso de Programación Basica",
+      "company": "Platzi",
+      "date": "ago. 2021",
+      "credential": "6fa47608-cc05-450b-91 e7-6179bebefb6b",
+      "credentialUrl": "#"
+    },
+    {
+      "logo": "../src/assets/platzi.webp",
+      "title": "Curso Profesional de Git y GitHub",
+      "company": "Platzi",
+      "date": "jun. 2021",
+      "credential": "f8feb9c6-4ad6-428c-a378-e15dd19747b6",
+      "credentialUrl": "#"
+    }
+  ]
+}
