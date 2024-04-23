@@ -1,24 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Certificates = ({logo, title, company, date, credential, credentialUrl, showCredential}) => {
+const Certificates = ({data}) => {
   return (
-    <ul>
-      <li>
-        <div className="edu__content">
-          <img src={logo} alt="" className="certLogo"/>
-          <div className="edu__text">
-            <strong>{title}</strong>
-            <span>{company}</span>
-            <span>{date}</span>
-            <span>{credential}</span>
-            <a href={credentialUrl} target="_blank" rel="noreferrer">
-              {showCredential} <i className="gg-link"></i>
-            </a>
+    <div className="courses-container">
+      {data?.map((certificate, index) => {
+        return (
+          <div key={index} className="course">
+            <img src={certificate.logo} alt={certificate.title} />
+            <div className="course-info">
+              <h3>{certificate.title}</h3>
+              <span>{certificate.company}</span>
+              <p className="capitalize">{certificate.date}</p>
+              <p>{certificate.credential}</p>
+              <a href={certificate.credentialUrl} target="_blank" rel="noreferrer">Show Credential</a>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        );
+      })}
+    </div>
   );
 };
+
+Certificates.propTypes = {data: PropTypes.array.isRequired}
 
 export default Certificates;
