@@ -1,57 +1,45 @@
-import { useRef} from "react";
-import logo from "../assets/ricocondeeLogo.svg";
+import {FaBars} from "react-icons/fa";
+import propTypes from "prop-types";
+import logo from "../assets/ricocondee.svg";
 
-const Header = () => {
- /*  const checkRef = useRef(null);
-  const checkBtnRef = useRef(null);
-
-  // Accessing properties of the elements
-  const isChecked = checkRef.current.checked;
-  const myClassList = checkBtnRef.current.classList;
-
-  const handleChangeIcon = () => {
-    if (isChecked) {
-      myClassList.remove("fa-sun");
-      myClassList.add("fa-moon");
-    } else {
-      myClassList.remove("fa-moon");
-      myClassList.add("fa-sun");
-    }
-  }; */
+const Header = ({ funcBtn }) => {
   return (
     <header>
-      <img
-        src={logo}
-        alt="ricocondee's logo"
-        className="logo"
-      />
+      
       <nav>
         <ul>
-          <li>Home</li>
+          <li>
+            <a href="#home">Home</a>
+          </li>
           <li>
             <a href="#about">About</a>
           </li>
-          <li>Projects</li>
-          <li>Courses</li>
-          <li>Contact me</li>
           <li>
-            <button>
-              Download Resume <i className="fa-solid fa-file-arrow-down"></i>
+            <a href="#projects">Projects</a>
+          </li>
+          <img src={logo} alt="ricocondee's logo" className="logo" />
+          <li>
+            <a href="#education">Courses</a>
+          </li>
+          <li>
+            <a href="#contact">Contact me</a>
+          </li>
+          <li>
+            <button onClick={funcBtn}>
+              View Resume
             </button>
           </li>
         </ul>
       </nav>
-      <div className="theme">
-        <label htmlFor="scheme">
-          <i className="fa-solid fa-sun" id="schemeButton"></i>
-        </label>
-        <input type="checkbox" id="scheme"/>
-      </div>
-      <div className="muenu">
-        <i className="ti ti-menu"></i>
+      <div className="menu">
+        <FaBars className="menu_icon" />
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  funcBtn: propTypes.func,
 };
 
 export default Header;
