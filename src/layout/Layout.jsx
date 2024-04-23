@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Modal from "../containers/Modal";
@@ -19,8 +18,5 @@ const Layout = ({ children }) => {
   );
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Layout;

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const Certificates = ({data}) => {
   return (
@@ -21,7 +20,5 @@ const Certificates = ({data}) => {
     </div>
   );
 };
-
-Certificates.propTypes = {data: PropTypes.array.isRequired}
 
 export default Certificates;

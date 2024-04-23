@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const Project = ({ data }) => {
@@ -63,10 +62,6 @@ const Project = ({ data }) => {
       </span>
     </div>
   );
-};
-
-Project.propTypes = {
-  data: PropTypes.string.isRequired,
 };
 
 export default Project;

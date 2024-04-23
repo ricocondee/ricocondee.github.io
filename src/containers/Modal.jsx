@@ -1,5 +1,4 @@
 import React from 'react'
-import propTypes from 'prop-types';
 import {BsXLg} from 'react-icons/bs';
 
 const Modal = ({func}) => {
@@ -10,9 +9,5 @@ const Modal = ({func}) => {
     </div>
   )
 }
-
-Modal.propTypes = {
-  func: propTypes.func,
-};
 
 export default Modal
