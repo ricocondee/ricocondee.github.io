@@ -6,7 +6,7 @@ const Modal = ({func}) => {
   return (
     <div className='modal'>
       <BsXLg onClick={func} className='closeModal'/>
-      <iframe src="https://drive.google.com/file/d/1RuBeVVmL61jRO7ueEG4ayKIU4BqgZdiC/preview" ></iframe>
+      <iframe src="https://drive.google.com/file/d/1xK3ZN4AMjrpnZINYtWSJ6OJ9QL9x0zNA/preview" allow="autoplay"></iframe>
     </div>
   )
 }

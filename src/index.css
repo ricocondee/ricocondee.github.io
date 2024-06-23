@@ -6,12 +6,6 @@
   --button-font-color: #fffffe;
   --headline: #ffffe3;
 }
-@font-face {
-  font-family: "BN Harrold";
-  src: url("../src/assets/BNHarroldBold.otf") format("otf");
-  font-weight: 700;
-  font-style: normal;
-}
 
 * {
   margin: 0;
@@ -113,9 +107,36 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 3vw;
   width: 100%;
   height: 10vh;
-  background-color: white;
+  background-color: var(--main-color);
+}
+
+footer p {
+  color: var(--headline);
+  padding-bottom: 1vw;
+}
+
+.social-footer {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1vw;
+  padding: 3vw;
+}
+
+.social-footer img {
+  width: 3vw;
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+  filter: invert(1) grayscale(1) brightness(0.5);
+}
+
+.social-footer img:hover {
+  filter: invert(1) grayscale(1) brightness(1);
 }
 
 .menu,
@@ -124,15 +145,14 @@ footer {
 }
 
 .myself {
-  width: 20vw;
-  height: 40vh;
+  width: 25vw;
+  height: 50vh;
   margin-left: 1vw;
   object-fit: contain;
   background-color: #8f8f8f;
   float: right;
   position: relative;
   border-radius: 3vw;
-  filter: grayscale();
 }
 
 .myself img {
@@ -178,10 +198,10 @@ footer {
 }
 
 .title h1 {
-  font-family: "BN Harrold", system-ui;
+  font-family: "Freeman", system-ui;
   font-weight: 700;
-  font-size: 5vw;
-  line-height: 10vh;
+  font-size: 7vw;
+  line-height: 14vh;
   margin-bottom: 2vw;
   word-wrap: break-word;
   color: var(--dark-font-color);
@@ -207,24 +227,24 @@ footer {
 .modal {
   width: 100%;
   height: 100%;
-  background-color: #00000056;
+  background-color: transparent;
   position: fixed;
   z-index: 150;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
-  overflow: hidden;
 }
+
 .modal iframe {
-  width: 90%;
+  width: 100%;
   height: 100vh;
 }
 
 .closeModal {
   position: absolute;
-  top: 2vw;
-  right: 2vw;
+  top: 3vw;
+  right: 1vw;
   color: #ffffff;
   font-size: 2vw;
   cursor: pointer;
@@ -244,10 +264,10 @@ footer {
 
 .buttons a {
   padding: 2vw;
-  border: 0.05vw solid var(--button-color);
+  background-color: var(--button-color);
   border-radius: 3vw;
   color: var(--button-font-color);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .about {
@@ -256,145 +276,75 @@ footer {
   height: 100%;
 }
 
-
-.hiddenProject {
-  display: none;
-}
-
 .projects {
   padding: 3vw;
   width: 100%;
-  height: 100vh;
-}
+  height: 100%;
+} 
 
-.projects-container {
+.projects-container{
   width: 100%;
   height: 100%;
-  position: relative;
+  display: flex;
+  gap: 2vw;
+}
+
+.project-container{
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  overflow: hidden;
+}
+
+.project{
+  width: 32vw;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 2vw;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  transition: transform 1s ease, box-shadow 5s ease, overflow 5s ease;
+}
+
+.project:hover{
+  overflow: visible;
+  transform: translateY(-10px);
+}
+
+.project img{
+  width: 100vw;
+  height: 100vh;
+  object-fit:  cover;
+}
+
+.project:hover img{
+  width: 12vw;
+  height: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10vw var(--button-color));  
+}
+
+.project-links{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: .8vw;
 }
 
-@keyframes smoothAppear {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
-
-}
-
-.arrow:active ~ .project {
-  animation: smoothAppear 1s linear infinite;
-}
-
-.project{
-  position: relative;
-  width: 70%;
-  height: 80%;
-}
-
-.project-info {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.project-info img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.project-links {
-  width: 100%;
-  height: max-content;
-  position: absolute;
-  top: 100%;
-  gap: 1vw;
-  left: 0;
-  background-color: var(--main-color-alpha);
-  display: flex;
-  justify-content: space-between;
-}
-
-.project-links a {
-  padding: 1vw;
-  border: 0.1vw solid var(--button-color);
-  border-radius: 3vw;
-  color: var(--button-color);
-  font-weight: 600;
-}
-
-.project-text {
-  width: 100%;
-  height: max-content;
-  position: absolute;
-  top: 65%;
-  left: .105vw;
-  padding: 1vw;
-  background-color: var(--main-color-alpha);
-}
-
-.arrow {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  color: var(--button-color);
-}
-
-.leftArrow {
-  left: 1rem;
-  z-index: 100;
-}
-
-.rightArrow {
-  right: 1rem;
-  z-index: 100;
-}
-
-.demoDots {
-  position: absolute;
-  bottom: 5vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.dots {
-  width: 0.8vw;
-  height: 0.8vw;
+.project-links a{
   background-color: var(--button-color);
-  border-radius: 50%;
-  margin: 0 0.5vw;
-  cursor: pointer;
-}
-
-.selectedDot {
-  background-color: var(--dark-font-color);
-  width: 0.8vw;
-  height: 0.8vw;
-  border-radius: 50%;
-  margin: 0 0.5vw;
-  cursor: pointer;
+  padding: .5vw 1vw;
+  border-radius: 3vw;
+  color: var(--headline);
+  
 }
 
 .education{
@@ -406,37 +356,33 @@ footer {
 .courses-container{
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
 }
 
 .course{
-  width: 32vw;
-  height: 64vh;
+  width: 100%;
+  height: max-content;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1vw;
-  align-self: center;
-  justify-self: center;
+  align-items: flex-start;
+  gap: 2vw;
 }
 
 .course img{
-  width: 12vw;
-  height: 50%;
-  object-fit:  fill;
-  border-radius: 3vw;
+  width: 5vw;
+  aspect-ratio: 1 / 1;
+  border-radius: .8vw;
+  filter: drop-shadow(0 0 10vw var(--button-color));  
 }
 
 .course-info{
   width: 100%;
-  height: 100%;
+  height: max-content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: .8vw;
+  align-items: flex-start;
+  gap: .5vw;
 }
 
 .capitalize{
@@ -465,8 +411,37 @@ footer {
 @media (max-width: 768px) {
   header {
     width: 100%;
+  }
+  header nav ul{
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  header nav ul .logo {
+    width: 100px;
+  }
+  header nav ul li {
+    display: none;
+  }
+
+  header nav ul :last-child{
+    display: block;
+    padding: 2vw 2vw;
+  }
+
+  footer{
+    width: 100%;
+    height: 20vh;
+  }
+
+  footer p{
+    font-size: 3vw;
+    padding: 2vw;
+  }
+
+  .social-footer img{
+    width: 10vw;
   }
 
   main{
@@ -479,12 +454,14 @@ footer {
 
   .myself {
     width: 30vw;
-    height: 18vh;
+    height: 20vh;
+    margin-left: 3vw;
   }
   .title h1 {
     font-size: 8vw;
-    letter-spacing: 1vw;
-    line-height: 4rem;
+    letter-spacing: .5vw;
+    line-height: 10vw;
+    font-family: 'Freeman', system-ui;
   }
 
   .home strong{
@@ -493,38 +470,41 @@ footer {
 
   .projects-container{
     width: 100%;
-    height: 70%;
+    height: 100%;
   }
+
+  .project:hover img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+
   .project-info{
     width: 100%;
-    height: 100%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .leftArrow{
-    left: .1vw;
-  }
-  .rightArrow{
-    right: .1vw;
-  }
+
+  
   .courses-container{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    gap: 4vw;
   }
 
   .course{
-    width: 80%;
-    height: 50vh;
-    margin: 1vw 0;
+    width: 100%;
+    height: max-content;
+    gap: 3vw;
   }
 
   .course img{
-    width: 25%;
-    height: 20%;
+    width: 15vw;
+    height: 14%;
     border-radius: 3vw;
   }
 }

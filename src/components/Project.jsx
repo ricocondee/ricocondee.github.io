@@ -1,36 +1,20 @@
-import React, { useState } from "react";
-import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import React from "react";
+import PropTypes from "prop-types";
+import { getImageUrl } from "../utils/imageUtil";
+
 
 const Project = ({ data }) => {
-  const [current, setCurrent] = useState(0);
-  const handleLeftClick = () => {
-    current === 0 ? setCurrent(data.length - 1) : setCurrent(current - 1);
-  };
-  const handleRightClick = () => {
-    data.length - 1 === current ? setCurrent(0) : setCurrent(current + 1);
-  };
-  const handleDotsClick = (idx) => {
-    setCurrent(idx);
-  };
 
   return (
-    <div className="projects-container">
-      <FaChevronCircleLeft
-        className="arrow leftArrow"
-        onClick={handleLeftClick}
-      />
-      <FaChevronCircleRight
-        className="arrow rightArrow"
-        onClick={handleRightClick}
-      />
+    <div className="project-container">
       {data?.map((demo, index) => {
         return (
           <div
             key={index}
-            className={current === index ? "project" : "hiddenProject"}
+            className={"project"}
           >
             <div className="project-info">
-              <img src={demo.src} alt={demo.Project} />
+              <img src={getImageUrl(demo.src)} alt={demo.Project} />
               <div className="project-text">
                 <h2>{demo.Project}</h2>
                 <span>{demo.stack}</span>
@@ -48,20 +32,12 @@ const Project = ({ data }) => {
           </div>
         );
       })}
-
-      <span className="demoDots">
-        {data.map((_, index) => {
-          return (
-            <button
-              key={index}
-              className={current === index ? "dots" : "selectedDot"}
-              onClick={() => handleDotsClick(index)}
-            ></button>
-          );
-        })}
-      </span>
     </div>
   );
+};
+
+Project.propTypes = {
+  data: PropTypes.array.isRequired,
 };
 
 export default Project;

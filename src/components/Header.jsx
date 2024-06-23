@@ -1,6 +1,8 @@
 import {FaBars} from "react-icons/fa";
 import logo from "../assets/ricocondee.svg";
 
+import PropTypes from 'prop-types';
+
 const Header = ({ funcBtn }) => {
   return (
     <header>
@@ -35,6 +37,10 @@ const Header = ({ funcBtn }) => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  funcBtn: PropTypes.func,
 };
 
 export default Header;
