@@ -7,6 +7,12 @@
   --headline: #ffffe3;
 }
 
+@font-face {
+  font-family: "Titan One";
+  src:url("assets/TitanOne-Regular.ttf") format("truetype"),
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -145,8 +151,8 @@ footer p {
 }
 
 .myself {
-  width: 25vw;
-  height: 50vh;
+  width: 20vw;
+  height: 40vh;
   margin-left: 1vw;
   object-fit: contain;
   background-color: #8f8f8f;
@@ -198,11 +204,11 @@ footer p {
 }
 
 .title h1 {
-  font-family: "Freeman", system-ui;
-  font-weight: 700;
-  font-size: 7vw;
+  font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-size: 6vw;
   line-height: 14vh;
-  margin-bottom: 2vw;
+  margin-bottom: 1.5vw;
   word-wrap: break-word;
   color: var(--dark-font-color);
 }
@@ -221,7 +227,10 @@ footer p {
 }
 
 .about p {
+  text-align: justify;
+  margin-top: 2vw;
   color: var(--dark-font-color);
+  line-height: 2em;
 }
 
 .modal {
@@ -242,11 +251,12 @@ footer p {
 }
 
 .closeModal {
+  background-color: #16161a;
   position: absolute;
-  top: 3vw;
-  right: 1vw;
+  top: .9vw;
+  right: 4vw;
   color: #ffffff;
-  font-size: 2vw;
+  font-size: 2.5vw;
   cursor: pointer;
 }
 
@@ -285,48 +295,80 @@ footer p {
 .projects-container{
   width: 100%;
   height: 100%;
+  border-radius: 1vw 1vw;
   display: flex;
   gap: 2vw;
-}
-
-.project-container{
-  width: 100vw;
-  height: max-content;
-  display: flex;
   overflow: hidden;
 }
 
+.project-container{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
 .project{
-  width: 32vw;
-  height: 550px;
+  width: 100vw;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 2vw;
-  align-self: center;
-  justify-self: center;
   text-align: center;
-  transition: transform 1s ease, box-shadow 5s ease, overflow 5s ease;
+  position: relative;
 }
 
+.cover{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.811);
+  backdrop-filter: blur(.2vw);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  place-items: center;
+}
+
+
+
 .project:hover{
+  transition: transform 1s ease, overflow 5s ease;
   overflow: visible;
   transform: translateY(-10px);
+  padding: 1vw;
+}
+
+.cover strong{
+  color: var(--dark-font-color);
+  font-size: 13vw;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  grid-column: 4 / 7;
+}
+
+.project:hover .cover{
+  display: none;
 }
 
 .project img{
   width: 100vw;
   height: 100vh;
   object-fit:  cover;
+  z-index: 1;
 }
 
 .project:hover img{
   width: 12vw;
   height: 50%;
   object-fit: contain;
-  filter: drop-shadow(0 0 10vw var(--button-color));  
+  position: relative;
 }
 
 .project-links{
@@ -461,7 +503,7 @@ footer p {
     font-size: 8vw;
     letter-spacing: .5vw;
     line-height: 10vw;
-    font-family: 'Freeman', system-ui;
+    font-family: "Freeman", sans-serif;
   }
 
   .home strong{
@@ -477,6 +519,10 @@ footer p {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
+  }
+
+  .cover strong{
+    font-size: 8vw;
   }
 
   .project-info{
@@ -506,5 +552,9 @@ footer p {
     width: 15vw;
     height: 14%;
     border-radius: 3vw;
+  }
+
+  .closeModal {
+    font-size: 4vw;
   }
 }

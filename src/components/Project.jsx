@@ -2,20 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { getImageUrl } from "../utils/imageUtil";
 
-
 const Project = ({ data }) => {
-
   return (
     <div className="project-container">
       {data?.map((demo, index) => {
         return (
-          <div
-            key={index}
-            className={"project"}
-          >
+          <div key={index} className={"project"}>
             <div className="project-info">
               <img src={getImageUrl(demo.src)} alt={demo.Project} />
               <div className="project-text">
+                <div className="cover">
+                  <strong>{demo.Project}</strong>
+                </div>
                 <h2>{demo.Project}</h2>
                 <span>{demo.stack}</span>
                 <p>{demo.description}</p>
