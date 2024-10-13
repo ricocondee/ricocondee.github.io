@@ -1,5 +1,5 @@
 import React from 'react'
-import mySelf from "../assets/me2.webp";
+import mySelf from "../assets/me.jpg";
 
 const Me = () => {
   return (

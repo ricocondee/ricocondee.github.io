@@ -445,6 +445,7 @@ footer p {
   padding: .5vw 1vw;
   border-radius: 3vw;
   color: var(--headline);
+  
 }
 .course-info a:hover{
   color: var(--main-color);
@@ -552,6 +553,12 @@ footer p {
     width: 15vw;
     height: 14%;
     border-radius: 3vw;
+    filter: drop-shadow(0 0 20vw var(--button-color)); 
+  }
+
+  .course-info a{
+    padding: 2vw 2vw;
+    margin: 1vw;
   }
 
   .closeModal {
