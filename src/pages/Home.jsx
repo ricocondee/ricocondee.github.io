@@ -15,10 +15,10 @@ const Home = () => {
             <strong>Web Developer</strong>
           </div>
           <p>
-            As a software and web Developer, I am enthusiastic about
+            As a software and web developer, I am enthusiastic about
             self-directed learning and constantly improving my skills. I am
             proficient in various programming languages and technologies, such
-            as JavaScript, HTML 5, CSS 3, Node JS and React JS. I am always
+            as <strong>JavaScript</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>NodeJS</strong> and <strong>ReactJS</strong>. I am always
             eager to take on new challenges and continue to grow in the field of
             software development.
           </p>

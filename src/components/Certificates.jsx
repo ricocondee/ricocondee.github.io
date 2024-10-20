@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { getImageUrl } from "../utils/imageUtil";
 
 const Certificates = ({data}) => {
@@ -21,6 +22,18 @@ const Certificates = ({data}) => {
       })}
     </div>
   );
+};
+Certificates.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      logo: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      credential: PropTypes.string.isRequired,
+      company: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      credentialUrl: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Certificates;
