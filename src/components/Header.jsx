@@ -18,7 +18,7 @@ const Header = ({ funcBtn }) => {
           <li>
             <a href="#projects">Projects</a>
           </li>
-          <img src={logo} alt="ricocondee's logo" className="logo" />
+          <a href="/"><img src={logo} alt="ricocondee's logo" className="logo" /></a>
           <li>
             <a href="#education">Courses</a>
           </li>

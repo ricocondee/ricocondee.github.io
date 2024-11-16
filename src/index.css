@@ -2,7 +2,7 @@
   --dark-font-color: #94a1b2;
   --main-color: #16161a;
   --main-color-alpha: #16161a99;
-  --button-color: #7f5af0;
+  --button-color: #007bff;
   --button-font-color: #fffffe;
   --headline: #ffffe3;
 }
@@ -184,8 +184,7 @@ footer p {
 }
 
 .logo {
-  width: 6vw;
-  filter: invert()
+  width: 120px;
 }
 
 .certLogo {
