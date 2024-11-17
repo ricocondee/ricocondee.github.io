@@ -68,6 +68,14 @@
 
   "certificates": [
     {
+      "logo": "platzi.webp",
+      "title": "Curso de Frontend Developer",
+      "company": "Platzi Inc.",
+      "date": "Nov. 2024",
+      "credential": "7e08ff58-ec37-430e-b083-d7adf86a53bb",
+      "credentialUrl": "https://platzi.com/p/condericoe/curso/2467-frontend-developer/diploma/detalle/"
+    },
+    {
       "logo": "uninorte.webp",
       "title": "Web Development",
       "company": "Universidad del Norte",
@@ -94,7 +102,7 @@
     {
       "logo": "platzi.webp",
       "title": "Base de Datos con MongoDB y WebSockets",
-      "company": "Platzi",
+      "company": "Platzi Inc.",
       "date": "mar. 2022",
       "credential": "79a8b24b-2723-45a6-8d86-ba5331 Ob5260",
       "credentialUrl": "https://platzi.com/p/condericoe/curso/1689-nodejs-mongo-websockets/diploma/detalle/"
@@ -110,7 +118,7 @@
     {
       "logo": "platzi.webp",
       "title": "Curso Practico de React.js",
-      "company": "Platzi",
+      "company": "Platzi Inc.",
       "date": "oct. 2021",
       "credential": "8d625c97-80d1-4f96-8f6f-5ec4564b8925",
       "credentialUrl": "https://platzi.com/p/condericoe/curso/2484-react-practico/diploma/detalle/"
@@ -118,7 +126,7 @@
     {
       "logo": "platzi.webp",
       "title": "Curso Practico de JavaScript",
-      "company": "Platzi",
+      "company": "Platzi Inc.",
       "date": "oct. 2021",
       "credential": "ed288e9a-f7fd-482e-916e-2e0113ccd62d",
       "credentialUrl": "https://platzi.com/p/condericoe/curso/2327-javascript-practico-2021/diploma/detalle/"
@@ -126,7 +134,7 @@
     {
       "logo": "platzi.webp",
       "title": "[Appsco] Fundamentos de Ingeniería de Software",
-      "company": "Platzi",
+      "company": "Platzi Inc.",
       "date": "sept. 2021",
       "credential": "5bdbd557-3a51-4c97-86fd-1f313f9f2613",
       "credentialUrl": "https://platzi.com/p/condericoe/curso/1195-fundamentos-appsco/diploma/detalle/"
@@ -134,7 +142,7 @@
     {
       "logo": "platzi.webp",
       "title": "Curso de Programación Basica",
-      "company": "Platzi",
+      "company": "Platzi Inc.",
       "date": "ago. 2021",
       "credential": "6fa47608-cc05-450b-91 e7-6179bebefb6b",
       "credentialUrl": "https://platzi.com/p/condericoe/curso/1050-programacion-basica/diploma/detalle/"
@@ -142,7 +150,7 @@
     {
       "logo": "platzi.webp",
       "title": "Curso Profesional de Git y GitHub",
-      "company": "Platzi",
+      "company": "Platzi Inc.",
       "date": "jun. 2021",
       "credential": "f8feb9c6-4ad6-428c-a378-e15dd19747b6",
       "credentialUrl": "https://platzi.com/p/condericoe/curso/1557-git-github/diploma/detalle/"

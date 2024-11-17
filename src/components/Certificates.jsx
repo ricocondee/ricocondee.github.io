@@ -14,7 +14,6 @@ const Certificates = ({data}) => {
               <h3>{certificate.title}</h3>
               <p>{certificate.credential}</p>
               <span>{certificate.company}</span>
-              <p className="capitalize">{certificate.date}</p>
               <a href={certificate.credentialUrl} target="_blank" rel="noreferrer">Show Credential</a>
             </div>
           </div>
