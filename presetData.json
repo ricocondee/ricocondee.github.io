@@ -1,6 +1,14 @@
 {
   "slides": [
     {
+      "Project": "Genesis Electric S.A.S",
+      "src": "demo9.webp",
+      "stack": "React, HTML and CSS",
+      "description": "Web page for a company",
+      "link": "https://genesiselectricsas.com/",
+      "github": "https://github.com/ricocondee/"
+    },
+    {
       "Project": "Magdal Store",
       "src": "demo1.webp",
       "stack": "React, HTML and CSS",
