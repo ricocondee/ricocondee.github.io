@@ -1,4 +1,4 @@
-import React from "react";
+import Testimonial from "../assets/testimonial.webp";
 
 const About = () => {
   return (
@@ -12,6 +12,12 @@ const About = () => {
         the most outgoing person, I&apos;m passionate about using technology to
         create solutions that improve people&apos;s lives.
       </p>
+      <div className="testimonial__container">
+        <img
+          src={Testimonial}
+          alt="We were using pen and paper to create service orders. Emanuel's work not only changed that, it changed the way we do business. Wilson Nuñez - Founder of Genesis Electric"
+        />
+      </div>
     </section>
   );
 };
