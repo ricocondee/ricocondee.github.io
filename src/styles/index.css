@@ -1,0 +1,99 @@
+:root {
+  /* Color Palette */
+  --bg-primary: #131a24;
+  --bg-secondary: #27354a;
+  --bg-accent: #0c1118;
+  --text-primary: #e5f9ff;
+  --text-secondary: #c7d9e5;
+  --text-muted: #888;
+  --text-body: #666;
+  --text-subtitle: #555;
+  --text-dark: #333;
+  
+  /* Brand Colors */
+  --color-white: #ffffff;
+  --color-blue: #007bff;
+  --color-blue-hover: #0056b3;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(to bottom, #ffffff, transparent);
+  --gradient-background: linear-gradient(360deg, #131924 50%, #27354a 100%);
+  --gradient-text: linear-gradient(135deg, #e5f9ff, rgba(229, 249, 255, 0.7));
+  
+  /* Typography */
+  --font-primary: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  --font-mono: 'Inconsolata', 'Monaco', 'Consolas', monospace;
+  --font-title: 'Titan One', 'Impact', sans-serif;
+  --font-nav: 'Inconsolata', 'Monaco', 'Consolas', monospace;
+  
+  /* Font Sizes */
+  --fs-hero: clamp(4rem, 12vw, 12rem);
+  --fs-large: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-body: 1.2rem;
+  --fs-small: 0.9rem;
+  --fs-xs: 0.85rem;
+  --fs-icon: 1.5rem;
+  
+  /* Spacing */
+  --spacing-xs: 10px;
+  --spacing-sm: 20px;
+  --spacing-md: 40px;
+  --spacing-lg: 60px;
+  --spacing-xl: 3rem;
+  
+  /* Layout */
+  --border-radius: 10px;
+  --border-radius-sm: 0.5rem;
+  --border-radius-pill: 50px;
+  --max-width-content: 1400px;
+  --max-width-button: 300px;
+  --min-height-button: 60px;
+  --header-height: 90px;
+  --footer-height: 60px;
+  
+  /* Grid & Flex */
+  --grid-gap: 1.5rem;
+  --flex-gap: 20px;
+  --grid-min-column: 280px;
+  
+  /* Shadows */
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(39, 53, 74, 0.2);
+  --shadow-button: 0 4px 15px rgba(39, 53, 74, 0.4);
+  
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Opacity */
+  --opacity-muted: 0.9;
+  --opacity-subtle: 0.8;
+  --opacity-faded: 0.1;
+  --opacity-overlay: 0.6;
+  
+  /* Z-index Scale */
+  --z-background: -1;
+  --z-content: 1;
+  --z-overlay: 2;
+  --z-header: 10;
+  --z-modal: 100;
+  
+  /* Animation */
+  --animation-duration: 1s;
+  --animation-timing: linear infinite;
+  
+  /* Responsive Breakpoints (for reference in clamp() functions) */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-large: 1400px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}

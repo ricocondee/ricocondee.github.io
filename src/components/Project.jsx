@@ -1,17 +1,17 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { getImageUrl } from "../utils/imageUtil";
+import styles from "../styles/Project.module.css";
 
 const Project = ({ data }) => {
   return (
-    <div className="project-container">
+    <div className={styles.projectContainer}>
       {data?.map((demo, index) => {
         return (
-          <div key={index} className={"project"}>
-            <div className="project-info">
+          <div key={index} className={styles.project}>
+            <div className={styles.projectInfo}>
               <img src={getImageUrl(demo.src)} alt={demo.Project} />
-              <div className="project-text">
-                <div className="cover">
+              <div className={styles.projectText}>
+                <div className={styles.cover}>
                   <strong>{demo.Project}</strong>
                 </div>
                 <h2>{demo.Project}</h2>
@@ -19,7 +19,7 @@ const Project = ({ data }) => {
                 <p>{demo.description}</p>
               </div>
             </div>
-            <div className="project-links">
+            <div className={styles.projectLinks}>
               <a href={demo.link} target="_blank" rel="noreferrer">
                 Demo
               </a>

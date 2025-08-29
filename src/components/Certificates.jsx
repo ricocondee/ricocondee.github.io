@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { getImageUrl } from "../utils/imageUtil";
+import styles from "../styles/Certificates.module.css";
 
 const Certificates = ({data}) => {
   return (
-    <div className="courses-container">
+    <div className={styles.container}>
       {data?.map((certificate, index) => {
-         
         return (
-          <div key={index} className="course">
+          <div key={index} className={styles.certificate}>
             <img src={getImageUrl(certificate.logo)} alt={certificate.title} />
-            <div className="course-info">
+            <div className={styles.details}>
               <h3>{certificate.title}</h3>
               <p>{certificate.credential}</p>
               <span>{certificate.company}</span>

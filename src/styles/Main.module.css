@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  background-color: var(--bg-primary);
+  background-image: url("../assets/grid.svg");
+  background-blend-mode: soft-light;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.projectsSection {
+  width: 100%;
+  padding: var(--spacing-sm) 0;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .home {
+    gap: var(--spacing-sm);
+  }
+
+  .emanuel h1 {
+    letter-spacing: 0.2rem;
+  }
+}

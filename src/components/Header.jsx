@@ -1,39 +1,30 @@
 import {FaBars} from "react-icons/fa";
-import logo from "../assets/ricocondee.svg";
+import logo from "../assets/meLogo.svg";
+import styles from "../styles/Header.module.css";
 
 import PropTypes from 'prop-types';
 
 const Header = ({ funcBtn }) => {
   return (
-    <header>
-      
+    <header className={styles.header}>
+      <div className={styles.logoContainer}>
+        <a href="/"><img src={logo} alt="ricocondee's logo" className="logo" /></a>
+      </div>
       <nav>
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <a href="#about">Services</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#projects">Works</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <a href="/"><img src={logo} alt="ricocondee's logo" className="logo" /></a>
-          <li>
-            <a href="#education">Courses</a>
-          </li>
-          <li>
-            <a href="#contact">Contact me</a>
-          </li>
-          <li>
-            <button onClick={funcBtn}>
-              View Resume
-            </button>
+            <a href="#education">Blog</a>
           </li>
         </ul>
       </nav>
-      <div className="menu">
-        <FaBars className="menu_icon" />
+      <div className={styles.menu}>
+        <FaBars className={styles.menuIcon} />
       </div>
     </header>
   );

@@ -1,16 +1,15 @@
-import React from "react";
 import Project from "../components/Project";
 import { slides } from "../../presetData.json";
+import styles from "../styles/Projects.module.css";
 
 export const Projects = () => {
   return (
-    <article className="projects" id="projects">
-      <div className="light"></div>
-      <h2 className="no-margin">Projects</h2>
-      <div className="projects-container">
+    <div className={styles.projects} id="projects">
+      <h2 className={styles.sectionTitle}>Projects</h2>
+      <div className={styles.projectsContainer}>
         <Project data={slides} />
       </div>
-    </article>
+    </div>
   );
 };
 
