@@ -1,0 +1,254 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px; /* Account for fixed header height */
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* New Hero Section styles */
+.heroSection {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6); /* Darken image for readability */
+}
+
+/* Fallback gradient if no image */
+.heroGradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.date {
+  display: block;
+  font-family: var(--font-mono);
+  color: var(--text-secondary); /* Or a brighter accent color on dark bg */
+  color: #64ffda;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--color-white);
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.content {
+  max-width: 800px; /* Constrain width for readability */
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4rem;
+}
+
+.backButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-pill);
+  backdrop-filter: blur(5px);
+  transition: var(--transition-fast);
+}
+
+.backButton:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateX(-5px);
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+/* Markdown Styling */
+.markdownBody {
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.markdownBody h2,
+.markdownBody h3,
+.markdownBody h4 {
+  color: var(--text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-title);
+  letter-spacing: 0.05em;
+}
+
+.markdownBody p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Alignment Classes for Images */
+/* Note: :global is not needed if we just use normal classes in CSS modules, 
+   but since the content comes from markdown HTML, we need to target them 
+   specifically inside .markdownBody if using CSS modules scoping. */
+   
+.markdownBody img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto; /* Restore default centering */
+}
+
+/* Using attribute selectors or class matching if ReactMarkdown passes them through */
+.markdownBody :global(.align-left) {
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  max-width: 50%; /* Prevent too wide images breaking flow */
+}
+
+.markdownBody :global(.align-right) {
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+}
+
+.markdownBody :global(.align-center) {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Clear floats */
+.markdownBody::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive adjustments for floats */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 50vh;
+  }
+  
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .markdownBody :global(.align-left),
+  .markdownBody :global(.align-right) {
+    float: none;
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 100%;
+  }
+}
+
+.markdownBody ul,
+.markdownBody ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.markdownBody li {
+  margin-bottom: 0.5rem;
+}
+
+.markdownBody strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.markdownBody code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: #ff79c6;
+}
+
+.markdownBody pre {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.markdownBody pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.markdownBody blockquote {
+  border-left: 4px solid #64ffda;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: rgba(100, 255, 218, 0.05);
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

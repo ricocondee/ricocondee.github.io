@@ -12,11 +12,15 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "front-matter": "^4.0.2",
     "lucide-react": "^0.513.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-icons": "^5.1.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.17.0",
+    "rehype-raw": "^7.0.0",
     "use-sound": "^5.0.0"
   },
   "devDependencies": {

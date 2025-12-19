@@ -1,0 +1,78 @@
+.sliderContainer {
+  width: 100%;
+  padding: var(--spacing-xs) 0 var(--spacing-sm); /* Smaller padding */
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Add fade masks on sides */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  opacity: 0.8; /* Slightly more subtle */
+  margin-top: -1rem; /* Pull closer to the component above */
+}
+
+.sliderTrack {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  animation: scrollReverse 50s linear infinite; /* Slower, reverse direction */
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono); /* Monospace for "code" feel */
+  font-size: 0.9rem; /* Tiny size */
+  font-weight: 400;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.skillItem:hover {
+  color: var(--text-primary);
+  opacity: 0.9;
+  filter: grayscale(0%);
+}
+
+.icon {
+  font-size: 1.1rem; /* Tiny icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pause animation on hover */
+.sliderContainer:hover .sliderTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scrollReverse {
+  0% {
+    transform: translateX(-25%); /* Start from offset */
+  }
+  100% {
+    transform: translateX(0); /* Move to right */
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderTrack {
+    gap: 1.5rem;
+    animation-duration: 30s;
+  }
+  
+  .skillItem {
+    font-size: 0.8rem;
+  }
+  
+  .icon {
+    font-size: 1rem;
+  }
+}

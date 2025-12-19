@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Titan One';
+  src: url('../assets/TitanOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* Color Palette */
   --bg-primary: #131a24;

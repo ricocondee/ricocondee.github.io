@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <script>
+    CMS.registerPreviewStyle("/admin/admin-preview.css");
+
+    // Register a custom 'Resizable Image' block
+    CMS.registerEditorComponent({
+      id: "resizable_image",
+      label: "Image (Advanced)",
+      fields: [
+        { name: "src", label: "Image", widget: "image" },
+        { name: "width", label: "Width (e.g. 300px, 50%, 100%)", widget: "string", default: "100%" },
+        { 
+          name: "align", 
+          label: "Alignment", 
+          widget: "select", 
+          options: [
+            { label: "Center (Default)", value: "center" },
+            { label: "Left (Wrap Text)", value: "left" },
+            { label: "Right (Wrap Text)", value: "right" }
+          ],
+          default: "center"
+        },
+        { name: "alt", label: "Alt Text", widget: "string" },
+        { name: "title", label: "Title/Caption", widget: "string" }
+      ],
+      pattern: /^<img src="(.*)" alt="(.*)" style="width: (.*);" class="align-(.*)" title="(.*)" \/>$/,
+      fromBlock: function(match) {
+        return {
+          src: match[1],
+          alt: match[2],
+          width: match[3],
+          align: match[4],
+          title: match[5]
+        };
+      },
+      toBlock: function(obj) {
+        return `<img src="${obj.src}" alt="${obj.alt}" style="width: ${obj.width};" class="align-${obj.align}" title="${obj.title}" />`;
+      },
+      toPreview: function(obj) {
+        return `<img src="${obj.src}" alt="${obj.alt}" style="width: ${obj.width};" class="align-${obj.align}" title="${obj.title}" />`;
+      }
+    });
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

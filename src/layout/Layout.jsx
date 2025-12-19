@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Modal from "../containers/Modal";
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 const Layout = ({ children }) => {
   const [modal, setModal] = useState(false);
@@ -18,5 +19,8 @@ const Layout = ({ children }) => {
   );
 };
 
+Layout.propTypes = {
+  children: PropTypes.node,
+};
 
 export default Layout;
