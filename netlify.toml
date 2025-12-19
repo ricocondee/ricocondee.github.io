@@ -4,5 +4,5 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  # Explicitly disable Python
-  PYTHON_VERSION = ""
+  # Increase memory for large builds
+  NODE_OPTIONS = "--max-old-space-size=4096"
