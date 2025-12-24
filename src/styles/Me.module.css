@@ -205,31 +205,18 @@
   text-align: center;
 }
 
-/* Arrow Pointer Styles */
-.arrowPointer {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%; /* Center vertically relative to container */
-  right: -15%; /* Position to the right */
-  z-index: 4;
-  background-color: #64ffda; /* Dynamic color */
-  -webkit-mask-image: url('../assets/arrow.svg');
-  mask-image: url('../assets/arrow.svg');
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  animation: floatArrow 2s ease-in-out infinite;
-  transform: rotate(30deg); /* Initial rotation */
-}
-
-@keyframes floatArrow {
-  0% { transform: translate(0, 0) rotate(30deg); }
-  50% { transform: translate(5px, -5px) rotate(30deg); }
-  100% { transform: translate(0, 0) rotate(30deg); }
+.CTAButton button {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-family: var(--font-primary);
+  font-size: clamp(0.875rem, 3.5vw, var(--fs-xs));
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 /* Tablet Breakpoint - Intermediate optimization */
@@ -251,13 +238,6 @@
   
   .description {
     padding: 0 2rem;
-  }
-
-  .arrowPointer {
-    width: 90px;
-    height: 90px;
-    top: 50%;
-    right: -10%;
   }
 }
 
@@ -309,14 +289,6 @@
     width: 80%;
     object-fit: contain;
     object-position: center;
-  }
-
-  .arrowPointer {
-    width: 120px;
-    height: 120px;
-    top: 10%;
-    right: -25%; /* Move further right on desktop */
-    transform: rotate(30deg);
   }
 
   .titleContainer {
@@ -383,12 +355,22 @@
   .description {
     gap: 0.5rem;
   }
+}
 
-  .arrowPointer {
-    width: 70px;
-    height: 70px;
-    top: 50%;
-    right: -15%;
+/* Small mobile devices */
+@media (max-width: 360px) {
+  .container {
+    gap: 1rem;
+  }
+  
+  .background {
+    width: min(240px, 65vw);
+    height: min(240px, 65vw);
+  }
+  
+  .CTAButton {
+    padding: 0.875rem 2rem;
+    min-width: 180px;
   }
 }
 
