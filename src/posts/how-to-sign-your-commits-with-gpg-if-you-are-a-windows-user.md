@@ -4,7 +4,7 @@ date: 2022-08-22
 excerpt: >
   Signing your commits is very important because it not only validates those
   commits but also provides greater security for our work.
-thumbnail: /images/uploads/abs2gslpjmowgxutz2c2xvcw7vlquch0.webp
+thumbnail: ""
 ---
 Just like on paper, digital signatures can be verified. In other words, if you upload a signed commit, your colleagues or work team will be able to verify that it was really you who signed it, using the public key.
 
