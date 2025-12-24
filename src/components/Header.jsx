@@ -4,8 +4,10 @@ import logo from "../assets/meLogo.svg";
 import styles from "../styles/Header.module.css";
 import PropTypes from 'prop-types';
 import { useLocation, useNavigate } from "react-router-dom";
+import { useModal } from "../context/ModalContext"; // Corrected import path
 
-const Header = ({ funcBtn }) => {
+const Header = () => {
+  const { handleModal } = useModal(); // Get handleModal from context
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -50,7 +52,7 @@ const Header = ({ funcBtn }) => {
             <a href="/blog" onClick={() => setMenuOpen(false)}>Blog</a>
           </li>
           <li>
-            <button className={styles.resumeBtn} onClick={() => { funcBtn(); setMenuOpen(false); }}>
+            <button className={styles.resumeBtn} onClick={() => { handleModal('resume'); setMenuOpen(false); }}> {/* Use handleModal with 'resume' */}
               Resume
             </button>
           </li>
@@ -67,10 +69,6 @@ const Header = ({ funcBtn }) => {
       </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  funcBtn: PropTypes.func,
 };
 
 export default Header;

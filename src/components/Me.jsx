@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import mySelfNBG from "../assets/me5.png";
 import styles from "../styles/Me.module.css";
 import LetterGlitch from "../LetterGlitch/LetterGlitch.jsx";
+import { useModal } from "../context/ModalContext"; // Corrected import path
+import Arrow from "../assets/arrow.svg"; // Import arrow URL for fallback or reference if needed
 
 const Me = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { handleModal } = useModal(); // Get handleModal from context
 
   return (
     <div className={styles.container}>
@@ -23,6 +26,7 @@ const Me = () => {
         </div>
         <div className={styles.half}></div>
         <img src={mySelfNBG} className={styles.me} alt="Emanuel Rico Conde" />
+        <div className={styles.arrowPointer}></div>
       </div>
       <div className={styles.titleContainer}>
         <strong>Web Developer</strong>
@@ -46,8 +50,8 @@ const Me = () => {
         </button>
       </div>
       <div className={styles.CTAButton}>
-        <button>
-          <a href="#projects">Contact me</a>
+        <button onClick={() => handleModal('contact')}> {/* Call handleModal with 'contact' */}
+          Contact me
         </button>
         
       </div>

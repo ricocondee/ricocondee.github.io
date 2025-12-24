@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/Blog.module.css";
 import { Link } from "react-router-dom";
 import { getPosts } from "../utils/blogLoader";
+import { getImageUrl } from "../utils/imageUtil";
 import { FaArrowRight, FaClock } from "react-icons/fa";
 import SEO from "../components/SEO";
 
@@ -39,7 +40,7 @@ const Blog = () => {
           <article key={post.slug} className={styles.postCard}>
             {post.thumbnail && (
               <div className={styles.thumbnailWrapper}>
-                <img src={post.thumbnail} alt={post.title} className={styles.thumbnail} />
+                <img src={getImageUrl(post.thumbnail)} alt={post.title} className={styles.thumbnail} />
               </div>
             )}
             <div className={styles.cardHeader}>

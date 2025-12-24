@@ -82,9 +82,9 @@
 
 .backButton {
   position: absolute;
-  top: 2rem;
+  top: calc(var(--header-height) + 2rem); /* Adjusted position */
   left: 2rem;
-  z-index: 10;
+  z-index: calc(var(--z-header) + 1); /* Ensure it's above header */
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -102,6 +102,98 @@
   background: rgba(0, 0, 0, 0.6);
   transform: translateX(-5px);
 }
+
+/* Share Menu Styles */
+.shareContainer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.shareButton {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  background: rgba(39, 53, 74, 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-button);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shareButton:hover {
+  background: rgba(39, 53, 74, 1);
+  transform: scale(1.1);
+}
+
+.shareButton.active {
+  background: var(--color-white);
+  color: var(--bg-primary);
+  transform: rotate(90deg);
+}
+
+.shareMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: absolute;
+  bottom: 4rem; /* Start from bottom */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.shareMenu.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.shareOption {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  background: rgba(19, 26, 36, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-light);
+  
+  /* Staggered animation */
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+}
+
+.shareMenu.show .shareOption {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: calc(var(--i) * 0.05s);
+}
+
+.shareOption:hover {
+  background: var(--color-white);
+  color: var(--bg-primary);
+  transform: translateX(-5px) scale(1.1) !important;
+}
+
 
 .loading {
   width: 100%;
@@ -184,8 +276,13 @@
   }
   
   .backButton {
-    top: 1rem;
+    top: calc(var(--header-height) + 1rem); /* Adjusted position for mobile */
     left: 1rem;
+  }
+
+  .shareContainer {
+    bottom: 1.5rem;
+    right: 1.5rem;
   }
   
   .markdownBody :global(.align-left),

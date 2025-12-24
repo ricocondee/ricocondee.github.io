@@ -2,42 +2,42 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: var(--z-modal);
-  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's on top of everything */
+  backdrop-filter: blur(5px);
 }
 
 .modalContent {
-  width: 90%;
-  height: 90%;
-  max-width: 1000px;
   background-color: var(--bg-secondary);
+  padding: 2rem;
   border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 800px;
+  height: 80%;
   position: relative;
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(229, 249, 255, 0.1);
 }
 
 .closeModal {
   position: absolute;
-  top: -2.5rem;
-  right: 0;
-  font-size: 2rem;
-  color: var(--text-primary);
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  color: var(--text-primary);
   transition: var(--transition-fast);
+  z-index: 10;
 }
 
 .closeModal:hover {
-  color: #ff4757;
+  color: var(--color-white);
   transform: scale(1.1);
 }
 
@@ -45,22 +45,60 @@
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
+  background-color: #fff; /* Ensure white background for PDF readability */
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.contactContainer h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+}
+
+.contactContainer p {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.emailLink {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: #64ffda;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.emailLink:hover {
+  border-bottom-color: #64ffda;
 }
 
 @media (max-width: 768px) {
   .modalContent {
     width: 95%;
-    height: 80%;
+    height: 70%;
+    padding: 1.5rem;
   }
   
-  .closeModal {
-    top: -3rem;
-    right: 0.5rem;
+  .contactContainer h2 {
+    font-size: 2rem;
+  }
+  
+  .emailLink {
+    font-size: 1.1rem;
+    word-break: break-all;
   }
 }

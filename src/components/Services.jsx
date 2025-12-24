@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Services.module.css";
-import { FaCode, FaMobileAlt, FaRocket, FaPaintBrush } from "react-icons/fa";
+import { FaCode, FaMobileAlt, FaRocket, FaPaintBrush, FaBrain } from "react-icons/fa";
 
 const servicesData = [
   {
@@ -23,9 +23,9 @@ const servicesData = [
   },
   {
     id: 4,
-    icon: <FaRocket />,
-    title: "Performance Optimization",
-    description: "Auditing and improving application speed, accessibility, and SEO. Ensuring your digital products run smoothly on all devices."
+    icon: <FaBrain />,
+    title: "AI Powered Workflow",
+    description: "Leveraging AI and automation tools to supercharge the entire development workflow, from rapid prototyping and code generation to intelligent design assistance and automated testing. Boost efficiency and accelerate project delivery."
   }
 ];
 
