@@ -4,7 +4,7 @@ date: 2025-12-19
 excerpt: Since 2021, I have been building custom software to bridge the
   technical gap for small businesses. Discover how I leverage technology and AI
   to drive community impact and pursue financial independence.
-thumbnail: ""
+thumbnail: /images/uploads/ricocondee4502_hands_typing_on_a_holographic_keyboard_mixed_r_79120a4d-f904-4150-893d-b0029aa07edf_0.png
 ---
 **Since 2021, I have dedicated myself to software and web development.**
 
