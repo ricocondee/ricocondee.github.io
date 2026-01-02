@@ -22,8 +22,6 @@ I was trying to find an article that showed how to create GPG keys in Windows, b
 
 **Install GnuPG and gpg4win.**
 
-
-
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFoVzHOikjCVw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661196711322?e=1767830400&v=beta&t=4xR49oWuGxBBCdyh0fUsMwMIicDDUj83KyG4sQNxaP0" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
 Once on the page, scroll down until you find the section shown in the image. Then click on the first two links to download both programs. Once downloaded, proceed to install them.
@@ -38,25 +36,17 @@ Open GitBash and, from your user directory, enter the following command:
 gpg --full-generate-key
 ```
 
-Following this, we will see this result, where we will select the first (1) option.
-
-
+Following this, you will see this result, select the first (1) option.
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFlpzaUzQn6PA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661197720094?e=1767830400&v=beta&t=dYveGH_5wTPyMAXThvllpjZH6WcZJS0zYfu-9UHkSqo" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
-It will then ask us how long our key should be, with a range between 1024 and 4096 bits. It is best to use between 2048 and 4096, which is what I used, or you can simply use the one recommended by GitBash (3072), as long as it is within these values.
-
-
+It will then ask you how long our key should be, with a range between 1024 and 4096 bits. It is best to use between 2048 and 4096, which is what I used, or you can simply use the one recommended by GitBash (3072), as long as it is within these values.
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQEaEC8QRsDv7g/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661198864403?e=1767830400&v=beta&t=QJPhdusgW9d4WG5Tq8MV_HC0mMTc722MX_UciIbcEjc" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
 The next step is to specify the key duration. According to what I have read online, 24 months is best, but you can choose whatever you think is appropriate. You must enter the number plus the letter for the period. In my case, it was 24m (24 months).
 
-
-
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFbKVO5A7lvmg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661199004625?e=1767830400&v=beta&t=cIXg9yGW6Q_iSp_x105pFvyDDKsPlAE0SQWCI_KZHy0" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
-
-
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFkf7mx-SzoWA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661199138586?e=1767830400&v=beta&t=PvekaMy-3bi84BDMnZDL3rMRcq-M6Yahsrnv8qKNEow" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
@@ -64,33 +54,27 @@ Once the date is confirmed, you will be asked for your name and email address, w
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQERT3Gf6TahlA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661199352606?e=1767830400&v=beta&t=HQZ3H7D_iJy8IIgbNEjYMVCyjEaEy4qxXbGSh-2mD2g" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
-We type “O” and press the Enter key if everything is correct.
+Type “O” and press the Enter key if everything is correct.
 
-If we have completed the first step correctly, this window will not appear, asking you for a password to make your key more secure.
-
-
+If you have completed the first step correctly, this window will not appear, asking you for a password to make your key more secure.
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFmzAUzFur7dQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661199618237?e=1767830400&v=beta&t=rj3gSIzEfdbOAg24iHeXyDu5NRHpUHr7xefptoeQNV8" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
 In my case, I decided to leave it without a password. Click “OK” and wait a moment for the same window to appear asking for password confirmation. Enter it, or not, as appropriate, and click “OK.”
 
-With that, it would be created. Now we need to get the public key that we will link to GitHub in this case.
+With that, it would be created. Now you need to get the public key that will be linked to GitHub in this case.
 
 **Step 3**
 
 When installing the programs in the first step, Kleopatra should have been installed and opened.
 
-
-
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQE7LxmzZ3XaUw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661200293440?e=1767830400&v=beta&t=wvpbRS2NsVYmWdCeNsimNkCDv1EWw3J6KfrZgkaJF-4" alt="undefined" style="width: 35%;" class="align-center" title="undefined" />
 
-Before opening it, we will go back to GitBash and type the following commands:
+Before opening it, go back to GitBash and type the following commands:
 
 ```
 gpg --list-secret-keys --keyid-format=long
 ```
-
-
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQHG3ebL_FE0bQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661201735821?e=1767830400&v=beta&t=ArqLNf0B9FzWDEWt0_5NYc7Ls11nAYOIZ9Rib6OF-ZA" alt="undefined" style="width: 100%;" class="align-center" title="undefined" />
 
@@ -104,15 +88,13 @@ git config --global user.signingkey 12345
 
 <img src="https://media.licdn.com/dms/image/v2/D4E12AQFoJH6Co0xgog/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1661202021659?e=1767830400&v=beta&t=IIpU_u8T29dS1eLVAj_96AtsGRkNDy9FBc4R9hANW0k" alt="undefined" style="width: 100%;" class="align-center" title="undefined" />
 
-
-
-Now we export our key with this command.
+Now export your key with this command.
 
 ```
 gpg --export-secret-keys >~/.gnupg/secring.gpg
 ```
 
-Once that is done, we proceed to open Kleopatra and import the file we generated with GitBash.
+Once that is done, proceed to open Kleopatra and import the file you generated with GitBash.
 
 <img src="/images/uploads/1661200752837.webp" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
@@ -120,7 +102,7 @@ Select the secring.gpg file, which will be in the .gnupg folder in your user pat
 
 <img src="/images/uploads/1661200973124.webp" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
-We accept everything, and we should end up with something like this.
+Accept everything, and you should end up with something like this.
 
 <img src="/images/uploads/1661201257571.webp" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
@@ -134,7 +116,7 @@ New GPG Key.
 
 <img src="/images/uploads/1661202331805.webp" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
-We add a title, and in the large box we paste the contents of the public key.
+Add a title, and in the large box paste the contents of the public key.
 
 <img src="/images/uploads/1661202483969.webp" alt="undefined" style="width: 50%;" class="align-center" title="undefined" />
 
